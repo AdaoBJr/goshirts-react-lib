@@ -1,0 +1,7 @@
+.root {
+  width: 100%;
+}
+.button {
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(35, 0, 77, 0.2);
+}
