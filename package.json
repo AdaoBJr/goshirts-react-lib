@@ -1,0 +1,8 @@
+{
+  "name": "@goshirts-react/lib",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "author": "AdaoBJr <adaobjr@gmail.com>",
+  "license": "MIT"
+}
