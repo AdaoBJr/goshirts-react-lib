@@ -1,2 +1,7 @@
 import Button from './components/Button';
-export { Button };
+
+import { mergeClasses } from './talons';
+
+import { shallowMerge } from './utils';
+
+export { Button, mergeClasses, shallowMerge };
