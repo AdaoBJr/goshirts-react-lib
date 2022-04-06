@@ -9,7 +9,7 @@ function Button(props) {
 
   return (
     <div className={classes.root}>
-      <button className={classes.default}>{props.children}</button>
+      <button className={classes.defaultStyles}>{props.children}</button>
     </div>
   );
 }
