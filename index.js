@@ -1,7 +1,7 @@
-import { Button } from './components';
+import { Button, InputText } from './components';
 
-import { mergeClasses } from './talons';
+import { useStyle } from './talons';
 
 import { shallowMerge } from './utils';
 
-export { Button, mergeClasses, shallowMerge };
+export { Button, InputText, useStyle, shallowMerge };

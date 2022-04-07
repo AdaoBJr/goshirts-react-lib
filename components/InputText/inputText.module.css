@@ -1,0 +1,15 @@
+.root {
+  width: 100%;
+}
+
+.label {
+  width: 100%;
+}
+
+.input {
+  outline: none;
+}
+
+.text {
+  font-size: 0.75rem;
+}
