@@ -1,11 +1,8 @@
+import { useStyle } from '../../talons';
 import defaultClasses from './button.module.css';
 
-import { mergeClasses } from '../../talons';
-
-const { useStyles } = mergeClasses();
-
 function Button(props) {
-  const classes = useStyles(defaultClasses, props.classes);
+  const classes = useStyle(defaultClasses, props.classes);
 
   return (
     <div className={classes.root}>

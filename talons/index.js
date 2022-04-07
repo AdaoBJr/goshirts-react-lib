@@ -1,3 +1,3 @@
-import mergeClasses from './mergeClasses';
+import useStyle from './useStyle';
 
-export { mergeClasses };
+export { useStyle };
