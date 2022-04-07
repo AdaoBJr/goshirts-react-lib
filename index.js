@@ -1,7 +1,15 @@
-import { Button, InputText } from './components';
+import { Button, InputText, Dropdown } from './components';
 
-import { useStyle } from './talons';
+import { useStyle, useDropdown } from './talons';
 
-import { shallowMerge } from './utils';
+import { shallowMerge, eventListener } from './utils';
 
-export { Button, InputText, useStyle, shallowMerge };
+export {
+  Button,
+  InputText,
+  Dropdown,
+  useStyle,
+  useDropdown,
+  shallowMerge,
+  eventListener,
+};
