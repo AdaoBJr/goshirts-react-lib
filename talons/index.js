@@ -1,3 +1,4 @@
 import useStyle from './useStyle';
+import useDropdown from './useDropdown';
 
-export { useStyle };
+export { useStyle, useDropdown };
