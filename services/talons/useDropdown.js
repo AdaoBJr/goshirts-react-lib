@@ -1,16 +1,16 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { useEventListener } from '../hooks';
 
 const useDropdown = (props) => {
-  const { items } = props;
+  const { id, items, onValueChange } = props;
   const elementRef = useRef(null);
   const triggerRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
-  const [activeLabel, setActiveLabel] = useState('Selecione uma opção');
+  const [itemActive, setItemActive] = useState('Selecione uma opção');
 
   const handleClick = useCallback((value) => {
     const findOption = items.find((item) => item.value == value);
-    if (findOption) setActiveLabel(findOption.label);
+    if (findOption) setItemActive(findOption.label);
     setExpanded(false);
   }, []);
 
@@ -22,11 +22,12 @@ const useDropdown = (props) => {
   }, []);
 
   useEventListener(window, 'click', closeMenu);
+  useEffect(() => onValueChange({ id, itemActive }), [itemActive]);
 
   return {
     elementRef,
     triggerRef,
-    activeLabel,
+    itemActive,
     expanded,
     setExpanded,
     handleClick,
