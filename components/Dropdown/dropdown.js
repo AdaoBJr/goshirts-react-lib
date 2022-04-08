@@ -1,4 +1,4 @@
-// import { ExpandLess } from '@mui/icons-material';
+import { ExpandLess } from '@material-ui/icons';
 
 import { useStyle } from '../../services/hooks';
 import { useDropdown } from '../../services/talons';
@@ -6,7 +6,7 @@ import Icon from '../Icon';
 import defaultClasses from './dropdown.module.css';
 
 function Dropdown(props) {
-  const { items, chevron } = props;
+  const { items, icon } = props;
   const { activeLabel, expanded, elementRef, triggerRef, setExpanded, handleClick } =
     useDropdown({
       items,
@@ -21,7 +21,7 @@ function Dropdown(props) {
         onClick={() => setExpanded((prevState) => !prevState)}
       >
         <span>{activeLabel}</span>
-        <Icon src={chevron} size={18} />
+        <Icon icon={icon || ExpandLess} size={23} />
       </div>
       <div ref={elementRef} className={expanded ? classes.itemsActive : classes.items}>
         {items.map(({ key, label, value }) => {
