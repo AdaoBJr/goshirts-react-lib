@@ -5,14 +5,7 @@
   touch-action: manipulation;
 }
 
-.defaultStyles {
-  fill: none;
+.icon {
+  color: rgb(23, 32, 38);
   stroke: rgb(23, 32, 38);
-}
-
-@media (min-width: 641px) {
-  .icon_desktop {
-    width: 28px;
-    height: 28px;
-  }
 }
