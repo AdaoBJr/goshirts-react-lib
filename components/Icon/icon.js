@@ -2,7 +2,16 @@ import { useStyle } from '../../services/hooks';
 import defaultClasses from './icon.module.css';
 
 function Icon(props) {
-  const { icon: IconRender, active, size, width, color, stroke, fill } = props;
+  const {
+    icon: IconRender,
+    active,
+    size,
+    width,
+    color,
+    stroke,
+    fill,
+    ...restProps
+  } = props;
   const classes = useStyle(defaultClasses, props.classes);
 
   return (
@@ -13,6 +22,7 @@ function Icon(props) {
           stroke,
           color,
           fill,
+          ...restProps,
         }}
         className={active ? classes.iconActive : classes.icon}
       />

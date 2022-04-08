@@ -2,7 +2,7 @@ import { useStyle } from '../../services/hooks';
 import defaultClasses from './inputText.module.css';
 
 function InputText(props) {
-  const { id, name, value, placeholder, label, text, children } = props;
+  const { id, name, value, placeholder, label, text, children, ...restProps } = props;
   const classes = useStyle(defaultClasses, props.classes);
 
   return (
@@ -17,6 +17,7 @@ function InputText(props) {
         value={value}
         placeholder={placeholder}
         className={classes.input}
+        {...restProps}
       />
       <span className={classes.text}>{text || children}</span>
     </div>
