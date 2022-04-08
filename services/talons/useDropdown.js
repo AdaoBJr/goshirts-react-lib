@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from 'react';
-import { eventListener } from '@goshirts-react/lib';
+import { useEventListener } from '../hooks';
 
 const useDropdown = (props) => {
   const { items } = props;
@@ -8,7 +8,7 @@ const useDropdown = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [activeLabel, setActiveLabel] = useState('Selecione uma opção');
 
-  const handleClickOption = useCallback((value) => {
+  const handleClick = useCallback((value) => {
     const findOption = items.find((item) => item.value == value);
     if (findOption) setActiveLabel(findOption.label);
     setExpanded(false);
@@ -21,7 +21,7 @@ const useDropdown = (props) => {
     if (isOutsideElement && isOutsideTrigger) setExpanded(false);
   }, []);
 
-  eventListener(window, 'click', closeMenu);
+  useEventListener(window, 'click', closeMenu);
 
   return {
     elementRef,
@@ -29,7 +29,7 @@ const useDropdown = (props) => {
     activeLabel,
     expanded,
     setExpanded,
-    handleClickOption,
+    handleClick,
   };
 };
 

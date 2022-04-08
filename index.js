@@ -1,15 +1,17 @@
-import { Button, InputText, Dropdown } from './components';
+import { Button, InputText, Dropdown, Icon } from './components';
 
-import { useStyle, useDropdown } from './talons';
-
-import { shallowMerge, eventListener } from './utils';
+import { useStyle, useEventListener, useWindowSize } from './services/hooks';
+import { useDropdown } from './services/talons';
+import { shallowMerge } from './services/utils';
 
 export {
   Button,
   InputText,
   Dropdown,
+  Icon,
   useStyle,
   useDropdown,
   shallowMerge,
-  eventListener,
+  useEventListener,
+  useWindowSize,
 };
