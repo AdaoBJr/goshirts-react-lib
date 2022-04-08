@@ -2,7 +2,7 @@ import { useStyle } from '../../services/hooks';
 import defaultClasses from './icon.module.css';
 
 function Icon(props) {
-  const { icon: IconRender, size, width, color, stroke, fill } = props;
+  const { icon: IconRender, active, size, width, color, stroke, fill } = props;
   const classes = useStyle(defaultClasses, props.classes);
 
   return (
@@ -14,7 +14,7 @@ function Icon(props) {
           color,
           fill,
         }}
-        className={classes.icon}
+        className={active ? classes.iconActive : classes.icon}
       />
     </span>
   );
