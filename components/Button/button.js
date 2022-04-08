@@ -1,4 +1,4 @@
-import { useStyle } from '../../talons';
+import { useStyle } from '../../services/hooks';
 import defaultClasses from './button.module.css';
 
 function Button(props) {
