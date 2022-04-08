@@ -2,6 +2,9 @@
   position: relative;
   font-size: 0.9rem;
 }
+.label {
+  width: 100%;
+}
 
 .selected {
   display: flex;
@@ -27,7 +30,7 @@
 
 .items {
   position: absolute;
-  top: 40px;
+  top: 59px;
   left: 0;
   width: 99%;
   height: 0;
@@ -43,7 +46,7 @@
 
 .itemsActive {
   composes: items;
-  height: 200%;
+  height: 130%;
   border: 2px solid rgb(223, 225, 226);
   border-top-width: 0px;
   transition: 0.5s;

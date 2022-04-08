@@ -6,7 +6,7 @@ import Icon from '../Icon';
 import defaultClasses from './dropdown.module.css';
 
 function Dropdown(props) {
-  const { items, icon, settingsIcon = {} } = props;
+  const { label, items, icon, settingsIcon = {} } = props;
   const { size, stroke, fill, color } = settingsIcon;
 
   const { activeLabel, expanded, elementRef, triggerRef, setExpanded, handleClick } =
@@ -18,7 +18,11 @@ function Dropdown(props) {
 
   return (
     <div className={classes.root}>
+      <label className={classes.label} htmlFor="dropdown">
+        {label}
+      </label>
       <div
+        id="dropdown"
         ref={triggerRef}
         className={classes.selected}
         onClick={() => setExpanded((prevState) => !prevState)}
