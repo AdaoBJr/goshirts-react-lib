@@ -1,15 +1,21 @@
 .root {
+  display: grid;
+  gap: 0.25rem;
   width: 100%;
 }
 
 .label {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .input {
   outline: none;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(223, 225, 226);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .text {
