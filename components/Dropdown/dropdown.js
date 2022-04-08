@@ -6,33 +6,35 @@ import Icon from '../Icon';
 import defaultClasses from './dropdown.module.css';
 
 function Dropdown(props) {
-  const { label, items, icon, settingsIcon = {} } = props;
+  const { id, label, items, icon, settingsIcon = {}, onValueChange } = props;
   const { size, stroke, fill, color } = settingsIcon;
 
-  const { activeLabel, expanded, elementRef, triggerRef, setExpanded, handleClick } =
+  const { itemActive, expanded, elementRef, triggerRef, setExpanded, handleClick } =
     useDropdown({
+      id,
       items,
+      onValueChange,
     });
 
   const classes = useStyle(defaultClasses, props.classes);
 
   return (
     <div className={classes.root}>
-      <label className={classes.label} htmlFor="dropdown">
+      <label className={classes.label} htmlFor={id}>
         {label}
       </label>
       <div
-        id="dropdown"
+        id={id}
         ref={triggerRef}
         className={classes.selected}
         onClick={() => setExpanded((prevState) => !prevState)}
       >
-        <span>{activeLabel}</span>
+        <span>{itemActive}</span>
         <Icon
           classes={{ icon: classes.stylesIcon }}
           icon={icon || ExpandLess}
-          active={expanded}
           size={size || 23}
+          active={expanded}
           stroke={stroke}
           fill={fill}
           color={color}
@@ -45,7 +47,7 @@ function Dropdown(props) {
               <div
                 aria-hidden
                 key={key}
-                className={activeLabel === label ? classes.itemActive : classes.item}
+                className={itemActive === label ? classes.itemActive : classes.item}
                 onClick={() => handleClick(value)}
               >
                 <span>{label}</span>
