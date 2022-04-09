@@ -18,6 +18,11 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-.text {
+.textVisible {
   font-size: 0.75rem;
+  display: block;
+}
+
+.textInvisible {
+  display: none;
 }

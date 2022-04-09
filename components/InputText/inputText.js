@@ -19,7 +19,9 @@ function InputText(props) {
         className={classes.input}
         {...restProps}
       />
-      <span className={classes.text}>{text || children}</span>
+      <span className={text || children ? classes.textVisible : classes.textInvisible}>
+        {text || children}
+      </span>
     </div>
   );
 }
