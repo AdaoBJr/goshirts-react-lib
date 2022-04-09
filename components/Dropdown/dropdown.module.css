@@ -1,7 +1,5 @@
 .root {
   composes: root from '@goshirts-react/lib/components/InputText/inputText.module.css';
-  /* display: grid;
-  gap: 0.25rem; */
   font-size: 0.9rem;
   position: relative;
 }
@@ -16,7 +14,7 @@
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(223, 225, 226);
   border-radius: 4px;
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.4rem 1rem 0.4rem 0.5rem;
   cursor: pointer;
 }
 
@@ -33,9 +31,9 @@
 
 .items {
   position: absolute;
-  top: 66px;
+  top: 62px;
   left: 0;
-  width: 99%;
+  width: 98%;
   height: 0;
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(223, 225, 226);

@@ -20,18 +20,17 @@ function Dropdown(props) {
 
   return (
     <div className={classes.root}>
-      <label className={classes.label} htmlFor={id}>
+      <label className={classes.label} htmlFor={id || label}>
         {label}
       </label>
       <div
-        id={id}
+        id={id || label}
         ref={triggerRef}
         className={classes.selected}
         onClick={() => setExpanded((prevState) => !prevState)}
       >
         <span>{itemActive}</span>
         <Icon
-          classes={{ icon: classes.stylesIcon }}
           icon={icon || ExpandLess}
           size={size || 23}
           active={expanded}
