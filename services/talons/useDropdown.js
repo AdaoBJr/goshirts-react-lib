@@ -8,11 +8,17 @@ const useDropdown = (props) => {
   const [expanded, setExpanded] = useState(false);
   const [itemActive, setItemActive] = useState('Selecione uma opção');
 
-  const handleClick = useCallback((value) => {
-    const findOption = items.find((item) => item.value == value);
-    if (findOption) setItemActive(findOption.label);
-    setExpanded(false);
-  }, []);
+  const handleClick = useCallback(
+    (value) => {
+      const findOption = items.find((item) => item.value == value);
+      if (findOption) {
+        setItemActive(findOption.label);
+        onValueChange({ id, itemActive: findOption.value });
+      }
+      setExpanded(false);
+    },
+    [items]
+  );
 
   const closeMenu = useCallback(({ target }) => {
     const isOutsideElement = !elementRef.current || !elementRef.current.contains(target);
@@ -22,7 +28,6 @@ const useDropdown = (props) => {
   }, []);
 
   useEventListener(window, 'click', closeMenu);
-  useEffect(() => onValueChange({ id, itemActive }), [itemActive]);
 
   return {
     elementRef,
