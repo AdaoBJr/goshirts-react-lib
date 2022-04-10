@@ -7,10 +7,12 @@ function Icon(props) {
 
   return (
     <span className={classes.root}>
-      <IconRender
-        style={{ fontSize: size || width, ...restProps }}
-        className={active ? classes.iconActive : classes.icon}
-      />
+      {IconRender && (
+        <IconRender
+          style={{ fontSize: size || width, ...restProps }}
+          className={active ? classes.iconActive : classes.icon}
+        />
+      )}
     </span>
   );
 }
