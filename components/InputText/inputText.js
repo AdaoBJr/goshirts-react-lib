@@ -1,5 +1,4 @@
 import { useStyle } from '../../services/hooks';
-import Icon from '../Icon';
 import defaultClasses from './inputText.module.css';
 
 function InputText(props) {
