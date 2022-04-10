@@ -6,8 +6,7 @@ import Icon from '../Icon';
 import defaultClasses from './dropdown.module.css';
 
 function Dropdown(props) {
-  const { id, label, items, icon, settingsIcon = {}, onValueChange } = props;
-  const { size, stroke, fill, color } = settingsIcon;
+  const { id, label, items, icon, styleIcon = {}, onValueChange } = props;
 
   const { itemActive, expanded, elementRef, triggerRef, setExpanded, handleClick } =
     useDropdown({
@@ -32,11 +31,10 @@ function Dropdown(props) {
         <span>{itemActive}</span>
         <Icon
           icon={icon || ExpandLess}
-          size={size || 23}
+          size={styleIcon.size || 23}
           active={expanded}
-          stroke={stroke}
-          fill={fill}
-          color={color}
+          classes={{ icon: classes.icon }}
+          {...styleIcon}
         />
       </div>
       <div ref={elementRef} className={expanded ? classes.itemsActive : classes.items}>
