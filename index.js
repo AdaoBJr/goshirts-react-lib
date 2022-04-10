@@ -1,4 +1,4 @@
-import { Button, InputText, Form, Dropdown, Icon } from './components';
+import { Button, InputText, Form, Dropdown, Icon, Label } from './components';
 
 import { useStyle, useEventListener, useWindowSize } from './services/hooks';
 import { useDropdown } from './services/talons';
@@ -10,6 +10,7 @@ export {
   Form,
   Dropdown,
   Icon,
+  Label,
   useStyle,
   useDropdown,
   shallowMerge,
