@@ -1,8 +1,9 @@
 import { useStyle } from '../../services/hooks';
+import Icon from '../Icon';
 import defaultClasses from './inputText.module.css';
 
 function InputText(props) {
-  const { id, type, name, value, label, text, children, ...restProps } = props;
+  const { id, type, label, text, children, ...restProps } = props;
 
   const classes = useStyle(defaultClasses, props.classes);
 
@@ -12,10 +13,8 @@ function InputText(props) {
         {label}
       </label>
       <input
-        id={id || name || label}
+        id={id || label}
         type={type || 'text'}
-        name={name}
-        value={value}
         className={classes.input}
         {...restProps}
       />
