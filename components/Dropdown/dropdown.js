@@ -1,4 +1,4 @@
-import { ExpandLess } from '@material-ui/icons';
+import { FiChevronDown } from 'react-icons/fi';
 
 import { useStyle } from '../../services/hooks';
 import { useDropdown } from '../../services/talons';
@@ -8,12 +8,18 @@ import defaultClasses from './dropdown.module.css';
 function Dropdown(props) {
   const { id, label, items, icon, styleIcon = {}, onValueChange } = props;
 
-  const { itemActive, expanded, elementRef, triggerRef, setExpanded, handleClick } =
-    useDropdown({
-      id,
-      items,
-      onValueChange,
-    });
+  const {
+    itemActive,
+    expanded,
+    elementRef,
+    triggerRef,
+    setExpanded,
+    handleClick
+  } = useDropdown({
+    id,
+    items,
+    onValueChange
+  });
 
   const classes = useStyle(defaultClasses, props.classes);
 
@@ -26,12 +32,12 @@ function Dropdown(props) {
         id={id || label}
         ref={triggerRef}
         className={classes.selected}
-        onClick={() => setExpanded((prevState) => !prevState)}
+        onClick={() => setExpanded(prevState => !prevState)}
       >
         <span>{itemActive}</span>
         <Icon
-          icon={icon || ExpandLess}
-          size={styleIcon.size || 23}
+          icon={icon || FiChevronDown}
+          size={styleIcon.size || 22}
           active={expanded}
           classes={{ icon: classes.icon }}
           {...styleIcon}
