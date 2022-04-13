@@ -6,13 +6,13 @@
 }
 
 .icon {
-  color: rgb(23, 32, 38);
-  stroke: rgb(37, 51, 60);
+  color: rgb(37, 51, 60);
   transform: rotate(0deg) !important;
   transition: 0.5s !important;
 }
 
 .iconActive {
+  color: rgb(37, 51, 60);
   transform: rotate(180deg) !important;
   transition: 0.5s !important;
 }
